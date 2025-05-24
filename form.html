@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Borang Permohonan</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="profile.html">Profil</a>
+      <a href="form.html" class="active">Borang</a>
+    </nav>
+  </header>
+
+  <main class="form-container">
+     <section class="syarat">
+    <h2>Syarat-Syarat Permohonan</h2>
+    <ol>
+      <li>Permohonan lengkap wajib dimajukan dalam tempoh <strong>7 hari sebelum</strong> aktiviti / program.</li>
+      <li>Pengesahan akhir <strong>3 hari sebelum</strong> samada aktiviti diteruskan atau dibatalkan.</li>
+      <li>Sebarang tempahan penggunaan peralatan adalah tertakluk kepada <strong>BAKI JUMLAH STOK PERALATAN SEMASA</strong>.</li>
+      <li>Sebarang aktiviti perniagaan dan penyewaan kepada agensi luar adalah <strong>tidak dibenarkan</strong>.</li>
+    </ol>
+    </section>
+    <div id="formMessage"></div>
+
+    <form id="loanForm" onsubmit="return validateForm();">
+      
+      
+      <fieldset>
+        <legend>Butiran Pengguna</legend>
+        <label>Nama Pengguna:
+          <input type="text" id="nama" required>
+        </label>
+        <label>Program:
+          <input type="text" id="program" placeholder="cth:CDCS240" required>
+        </label>
+        <label>No. Staf/Pelajar:
+          <input type="text" id="noId" required>
+        </label>
+        <label>No. Telefon:
+          <input type="tel" id="telefon" required>
+        </label>
+      </fieldset>
+
+     
+      <fieldset>
+        <legend>Butiran Aktiviti / Program</legend>
+        <label>Tajuk Aktiviti:
+          <input type="text" id="aktiviti" required>
+        </label>
+        <label>Tarikh:
+          <input type="date" id="tarikh" required>
+        </label>
+        <label>Tempat:
+          <input type="text" id="tempat" required>
+        </label>
+        <label>Masa:
+          <input type="time" id="masa" required>
+        </label>
+      </fieldset>
+
+      
+      <fieldset>
+        <legend>Senarai Peralatan (Maksimum jumlah keseluruhan = 10)</legend>
+
+        <label>KHEMAH 20' X 20':
+          <select id="khemah">
+            <option value="0"></option><option value="1">1</option><option value="2">2</option>
+            <option value="3">3</option><option value="4">4</option><option value="5">5</option>
+            <option value="6">6</option><option value="7">7</option><option value="8">8</option>
+            <option value="9">9</option><option value="10">10</option>
+          </select>
+        </label>
+
+        <label>MEJA MAKAN BULAT:
+          <select id="mejaBulat">
+            <option value="0"></option><option value="1">1</option><option value="2">2</option>
+            <option value="3">3</option><option value="4">4</option><option value="5">5</option>
+            <option value="6">6</option><option value="7">7</option><option value="8">8</option>
+            <option value="9">9</option><option value="10">10</option>
+          </select>
+        </label>
+
+        <label>MEJA PANJANG:
+          <select id="mejaPanjang">
+            <option value="0"></option><option value="1">1</option><option value="2">2</option>
+            <option value="3">3</option><option value="4">4</option><option value="5">5</option>
+            <option value="6">6</option><option value="7">7</option><option value="8">8</option>
+            <option value="9">9</option><option value="10">10</option>
+          </select>
+        </label>
+
+        <label>KERUSI BANQUET:
+          <select id="kerusiBanquet">
+            <option value="0"></option><option value="1">1</option><option value="2">2</option>
+            <option value="3">3</option><option value="4">4</option><option value="5">5</option>
+            <option value="6">6</option><option value="7">7</option><option value="8">8</option>
+            <option value="9">9</option><option value="10">10</option>
+          </select>
+        </label>
+
+        <label>KERUSI BANQUET BERLENGAN:
+          <select id="kerusiLengan">
+            <option value="0"></option><option value="1">1</option><option value="2">2</option>
+            <option value="3">3</option><option value="4">4</option><option value="5">5</option>
+            <option value="6">6</option><option value="7">7</option><option value="8">8</option>
+            <option value="9">9</option><option value="10">10</option>
+          </select>
+        </label>
+
+        <label>KERUSI PLASTIK:
+          <select id="kerusiPlastik">
+            <option value="0"></option><option value="1">1</option><option value="2">2</option>
+            <option value="3">3</option><option value="4">4</option><option value="5">5</option>
+            <option value="6">6</option><option value="7">7</option><option value="8">8</option>
+            <option value="9">9</option><option value="10">10</option>
+          </select>
+        </label>
+
+        <label>ROSTRUM:
+          <select id="rostrum">
+            <option value="0"></option><option value="1">1</option><option value="2">2</option>
+            <option value="3">3</option><option value="4">4</option><option value="5">5</option>
+            <option value="6">6</option><option value="7">7</option><option value="8">8</option>
+            <option value="9">9</option><option value="10">10</option>
+          </select>
+        </label>
+
+        <label>PLATFORM 4' X 8':
+          <select id="platform">
+            <option value="0"></option><option value="1">1</option><option value="2">2</option>
+            <option value="3">3</option><option value="4">4</option><option value="5">5</option>
+            <option value="6">6</option><option value="7">7</option><option value="8">8</option>
+            <option value="9">9</option><option value="10">10</option>
+          </select>
+        </label>
+
+        <label>BACKDROP 4 X 8':
+          <select id="backdrop">
+            <option value="0"></option><option value="1">1</option><option value="2">2</option>
+            <option value="3">3</option><option value="4">4</option><option value="5">5</option>
+            <option value="6">6</option><option value="7">7</option><option value="8">8</option>
+            <option value="9">9</option><option value="10">10</option>
+          </select>
+        </label>
+
+        <label>SOFA (Dewan Seri Semarak Sahaja):
+          <select id="sofa">
+            <option value="0"></option><option value="1">1</option><option value="2">2</option>
+            <option value="3">3</option><option value="4">4</option><option value="5">5</option>
+            <option value="6">6</option><option value="7">7</option><option value="8">8</option>
+            <option value="9">9</option><option value="10">10</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <button type="submit">Hantar Permohonan</button>
+    </form>
+
+    <section id="result"></section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Universiti Teknologi MARA Cawangan Perlis</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
