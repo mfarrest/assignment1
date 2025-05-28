@@ -1,14 +1,13 @@
+// MUHAMMAD FARIS BIN MOHD FAIRUL 2023114523 
 function validateForm() {
   const messageBox = document.getElementById("formMessage");
   messageBox.innerHTML = "";
   messageBox.className = "";
 
-  // Remove previous field highlights
   document.querySelectorAll('.error-field').forEach(el => {
     el.classList.remove('error-field');
   });
-
-  // Collect form values
+  
   const nama = document.getElementById("nama").value.trim();
   const program = document.getElementById("program").value.trim();
   const noId = document.getElementById("noId").value.trim();
@@ -21,19 +20,16 @@ function validateForm() {
   const errorMessages = [];
   let isValid = true;
 
-  // Validate fields
   if (!nama) {
     markError("nama");
     errorMessages.push("Sila isi nama pengguna.");
     isValid = false;
   }
-
   if (!program) {
     markError("program");
     errorMessages.push("Sila isi program.");
     isValid = false;
   }
-
   if (!noId) {
     markError("noId");
     errorMessages.push("Sila isi nombor staf/pelajar.");
@@ -43,7 +39,6 @@ function validateForm() {
     errorMessages.push("Nombor staf/pelajar mesti mengandungi tepat 10 digit.");
     isValid = false;
   }
-
   if (!telefon) {
     markError("telefon");
     errorMessages.push("Sila isi nombor telefon.");
@@ -53,43 +48,35 @@ function validateForm() {
     errorMessages.push("Nombor telefon mesti mengandungi tepat 11 digit.");
     isValid = false;
   }
-
   if (!aktiviti) {
     markError("aktiviti");
     errorMessages.push("Sila isi tajuk aktiviti.");
     isValid = false;
   }
-
   if (!tarikh) {
     markError("tarikh");
     errorMessages.push("Sila pilih tarikh.");
     isValid = false;
   }
-
   if (!tempat) {
     markError("tempat");
     errorMessages.push("Sila isi tempat.");
     isValid = false;
   }
-
   if (!masa) {
     markError("masa");
     errorMessages.push("Sila pilih masa.");
     isValid = false;
   }
-
-  // Equipment selection
   const equipmentIds = [
     "khemah", "mejaBulat", "mejaPanjang", "kerusiBanquet",
     "kerusiLengan", "kerusiPlastik", "rostrum", "platform",
     "backdrop", "sofa"
   ];
-
   let totalItems = 0;
   for (const id of equipmentIds) {
     totalItems += parseInt(document.getElementById(id).value);
   }
-
   if (totalItems === 0) {
     errorMessages.push("Sila pilih sekurang-kurangnya satu (1) peralatan dari senarai.");
     isValid = false;
@@ -97,32 +84,25 @@ function validateForm() {
     errorMessages.push("Jumlah maksimum pinjaman peralatan ialah 10 unit sahaja!");
     isValid = false;
   }
-
-  // Display error or success
   if (!isValid) {
     messageBox.innerHTML = errorMessages.map(msg => `<p>${msg}</p>`).join("");
     messageBox.className = "error-box";
     window.scrollTo({ top: messageBox.offsetTop - 20, behavior: 'smooth' });
     return false;
   }
-
-  // Success
   showSuccess("Permohonan berjaya dihantar!");
   displayResult();
   return false;
 }
-
 function markError(fieldId) {
   const field = document.getElementById(fieldId);
   field.classList.add("error-field");
 }
-
 function showSuccess(message) {
   const box = document.getElementById("formMessage");
   box.innerHTML = `<p>${message}</p>`;
   box.className = "success-box";
 }
-
 function displayResult() {
   const result = document.getElementById("result");
 
@@ -147,7 +127,6 @@ function displayResult() {
     backdrop: "BACKDROP 4 X 8'",
     sofa: "SOFA (Dewan Seri Semarak Sahaja)"
   };
-
   let itemList = "";
   for (const [id, label] of Object.entries(items)) {
     const val = parseInt(document.getElementById(id).value);
@@ -155,7 +134,6 @@ function displayResult() {
       itemList += `<li>${label}: ${val} unit</li>`;
     }
   }
-
   result.innerHTML = `
     <div class="success-box" id="printArea">
       <h3>Maklumat Permohonan:</h3>
@@ -170,7 +148,6 @@ function displayResult() {
       <h4>Peralatan Dimohon:</h4>
       <ul>${itemList}</ul>
     </div>
-
     <button onclick="window.print()" class="btn btn-print">Cetak Permohonan</button>
   `;
 }
