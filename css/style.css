@@ -1,4 +1,4 @@
-/* GENERAL RESET */
+/* MUHAMMAD FARIS BIN MOHD FAIRUL 2023114523  */
 body, html {
   margin: 0;
   padding: 0;
@@ -9,7 +9,7 @@ body, html {
   min-height: 100vh;
 }
 
-/* NAVBAR */
+
 .navbar {
   position: fixed;
   top: 0;
@@ -42,7 +42,7 @@ body, html {
   color: #ffc107;
 }
 
-/* LANDING PAGE */
+
 .landing {
   background: linear-gradient(to right, #4b0082, #6a1b9a);
   color: white;
@@ -95,7 +95,7 @@ body, html {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* PROFILE PAGE */
+
 .dashboard {
   display: flex;
   justify-content: center;
@@ -141,7 +141,7 @@ body, html {
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
-/* FORM PAGE */
+
 .form-container {
   padding: 80px 20px 100px;
   max-width: 800px;
@@ -252,7 +252,7 @@ button[type="submit"]:hover {
   border-radius: 4px;
 }
 
-/* VALIDATION MESSAGES */
+
 #formMessage {
   margin: 0 0 20px;
   padding: 15px;
@@ -278,7 +278,6 @@ button[type="submit"]:hover {
   margin: 5px 0;
 }
 
-/* ERROR FIELD STYLING */
 .error-field {
   border-color: #dc3545 !important;
 }
@@ -287,7 +286,7 @@ button[type="submit"]:hover {
   box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.2) !important;
 }
 
-/* FOOTER */
+
 footer {
   background-color: #4b0082;
   color: white;
